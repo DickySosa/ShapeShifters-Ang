@@ -5,16 +5,19 @@ import { AppComponent } from './app.component';
 import { SinginComponent } from './pages/autentication/singin/singin.component';
 import { RegisterComponent } from './pages/autentication/register/register.component';
 import { VerificationCodeComponent } from './pages/autentication/verification-code/verification-code.component';
+import { SwitchScreensComponent } from './pages/autentication/switch-screens/switch-screens.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
     SinginComponent,
     RegisterComponent,
-    VerificationCodeComponent
+    VerificationCodeComponent,
+    SwitchScreensComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule, CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
