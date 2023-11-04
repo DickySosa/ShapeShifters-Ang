@@ -7,6 +7,7 @@ import { RegisterComponent } from './pages/autentication/register/register.compo
 import { VerificationCodeComponent } from './pages/autentication/verification-code/verification-code.component';
 import { SwitchScreensComponent } from './pages/autentication/switch-screens/switch-screens.component';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,9 @@ import { CommonModule } from '@angular/common';
     SwitchScreensComponent
   ],
   imports: [
-    BrowserModule, CommonModule
+    BrowserModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
