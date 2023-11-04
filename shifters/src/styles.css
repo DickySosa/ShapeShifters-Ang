@@ -23,3 +23,15 @@
     color: white;
     margin-bottom: 2rem;
 }
+
+/*
+ngIf section validations
+*/
+.invalid-field{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(248, 152, 152);
+    border-radius: 5px;
+    height: 35px;
+}
