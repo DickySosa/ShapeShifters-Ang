@@ -1,11 +1,11 @@
 <form (ngSubmit)="onSubmit(signInForm.value)" [formGroup]="signInForm" class="flex flex-col gap-4">
-  
+
   <input type="text" placeholder="Username" class="input input-ghost" name="username" formControlName="username"
     required />
-  <div *ngIf="validate('username','required')" class="text-red-600">
+  <div *ngIf="validate('username','required')" class="text-error">
     This field is required.
   </div>
-  <div *ngIf="validate('username','minlength')" class="text-red-600">
+  <div *ngIf="validate('username','minlength')" class="text-error">
     Userame must be at least
     {{signInForm.get('username')?.errors?.['minlength'].requiredLength}}
     characters.
@@ -18,34 +18,37 @@
     required />
 
   <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['required']"
-    class="text-red-600">
+    class="text-error">
     This field is required.
   </div>
 
   <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['minlength']"
-    class="text-red-600">
+    class="text-error">
     Password must be at least
     {{signInForm.get('password')?.errors?.['minlength'].requiredLength}}
     characters.
   </div>
 
   <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['maxlength']"
-    class="text-red-600">
+    class="text-error">
     Password should not be more than
     {{signInForm.get('password')?.errors?.['minlength'].requiredLength}}
     characters long.
   </div>
 
   <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['pattern']"
-    class="text-red-600">
+    class="text-error">
     Password should have lower, upper case, numbers and special characters
   </div>
   <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['passwordMatchValidator']"
-    class="text-red-600">
+    class="text-error">
     Password do not match
   </div>
-  <button class="btn bg-green-500 rounded-xl hover:bg-green-400 mt-10">
+  <button class="btn btn-primary">
     SIGN IN
+  </button>
+  <button class="btn btn-primary">
+    <img width="40px" height="40px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADXUlEQVR4nO2az0tVQRTHP5HpCyPz6cuWuQyj+icqLSt1Z9musE0mFrQqXVurQPDvKEQsKoSK7IfVpjJ1VbmIbNdTsXhx6HthqPfzvvvmXcUvXHh6Zuacc+fMmTPfubCFzYsk0AXcAiaAj8APYE2P/f4gmbU5AzQSEySA88B94DeQKfH5BUwBfUBdNRzYCVwFlhyjVoFHwA3NzAG98R16GvU/k90EHqtP0P8rMKSX4wUngUXHgJfABaAhxFh7gIvAK2e8BaCDCsLe1Lij8DVwLMLx24E3zvhjlZidfTLcFPwELgPbo1bC3zGvAGlntluiGrxV051R1jlI5XEImJPOedlQFlLOgC+AZvyhEXgi3YuKilBIOOH0DKjHP+qB506YhVoz40442WZXLTQ5UWEJoOQUGyxsH2uimDWTlk2W3Yre7IJ9wrJTXDDoLP6iQuyas09UIsWGRQ3wVraZU3lRp1LBGh8lfjgh25YKzUqfkyHiiG1OJj2br+EDNbLaKa7ol42TuRokVVavhiwADSP42SjXgPVcdnbL04dlOGH9fWBauk5lE96W0M4TYZ3w5ciIdI1mE05IeDrkoD4d6Zauu9mEnyS0U1xYJ3w50iZdxgv8h2UJk2U44cuRZun6lk24JmFtGU5E+RTauAOeoCxHrsfZkeUSQyuXMz6Qyhdam2axT0hoDGAp+HdmfKAnX/oNNkQjzzb0htglobGFYRDMjM8SpTNXMRYUjcYAxrVoTDpF4+5cjabkqdGYccUl2WhrOifOqZFxsXE9WM3Kxt5CG80XNTxO/NAp2z4Xcw0xpMazMSQf3sm2gWI6JByu1wjluGBINs2VcinUoU5pkWPVxhFgRTaVfJUx5rwBoy2rhZRIObPlTpgBEqKFMiKSq0Fi7wJmZMNMOfeMKRVmwbWC/e0LSeCpdC9EceHT6kythdlh/KyJeem0qnx/VAO3OGGWFvdq6TBq1Cg7rTjhtDdqJQknAWREKHdEuGPbVUawTwQLu6J37+3OtGfExfaH/IohqdopKDsyCqUob4sLzs6gU85kVJFaeT0s3qlNabtWT5MujXrUZtrhCYKyY6BaX0DUiRWf1BGgVIJhXVVsb7UcyIYGcbF2arunu8fvzkc19vu9jqejapvzPLEFNjj+AM/EZqOYLbGmAAAAAElFTkSuQmCC">Go Back
   </button>
 
 </form>

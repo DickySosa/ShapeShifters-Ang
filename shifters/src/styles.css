@@ -6,18 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* submit button */
-
-
-/*register and sign in input fields*/
-
-/*
-ngIf section validations
-*/
-
-
 body, html {
     height: 100%;
     width: 100%;
-    /* margin: 1rem; */
   }
