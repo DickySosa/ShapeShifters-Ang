@@ -1,25 +1,30 @@
 <div class="App">
 
-    <h1 class='main-title'>ShapeShifters</h1>
-    <section class='switch-buttons'>
-        <div class='switch-buttons-container'>
-
-            <button 
-            class="switch-screen " 
-            [ngClass]="{ 'active-form': isFormActive }" 
-            (click)="isFormActive = true">Sign In</button>
-
-            <button 
-            class="switch-screen" 
-            [ngClass]="{ 'active-form': !isFormActive }"
-            (click)="isFormActive = false">Register</button>
-
+    <div class="mx-3 sm:mx-14 md:mx-28 lg:mx-80">
+        <br>
+        <br>
+        <br>
+        <h1 class='main-title'>ShapeShifters</h1>
+        <section class='switch-buttons'>
+            <div class='switch-buttons-container'>
+    
+                <button 
+                class="switch-screen " 
+                [ngClass]="{ 'active-form': isFormActive }" 
+                (click)="isFormActive = true">Sign In</button>
+    
+                <button 
+                class="switch-screen" 
+                [ngClass]="{ 'active-form': !isFormActive }"
+                (click)="isFormActive = false">Register</button>
+    
+            </div>
+        </section>
+    
+        <div class="">
+            <app-singin *ngIf="isFormActive"></app-singin>
+            <app-register *ngIf="!isFormActive"></app-register>
         </div>
-    </section>
-
-    <div class="component-container">
-        <app-singin *ngIf="isFormActive"></app-singin>
-        <app-register *ngIf="!isFormActive"></app-register>
     </div>
 
 </div>

@@ -6,6 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./switch-screens.component.css']
 })
 export class SwitchScreensComponent {
-
   isFormActive:boolean = true;
 }

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { passwordMatchValidator } from 'src/app/helper/password-match-validator';
-import { ActivatedRoute } from '@angular/router';
 
 interface RegisterForm {
   username: string;
@@ -18,7 +17,6 @@ interface RegisterForm {
 export class RegisterComponent {
   
   constructor(private readonly fb: FormBuilder,
-    //private readonly route: ActivatedRoute
     ){}
 
     registerForm!: FormGroup;
