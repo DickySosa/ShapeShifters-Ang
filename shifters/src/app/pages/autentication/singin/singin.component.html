@@ -1,17 +1,51 @@
-<form class="flex flex-col gap-4">
-    <input
-      type="text"
-      placeholder="Username"
-      class="input input-ghost"
-    />
-    <input
-      type="text"
-      placeholder="Password"
-      class="input input-ghost"
-    />
-    <button
-      class="btn bg-green-500 rounded-xl hover:bg-green-400 mt-10"
-    >
-      SIGN IN
-    </button> 
-  </form>
+<form (ngSubmit)="onSubmit(signInForm.value)" [formGroup]="signInForm" class="flex flex-col gap-4">
+  
+  <input type="text" placeholder="Username" class="input input-ghost" name="username" formControlName="username"
+    required />
+  <div *ngIf="validate('username','required')" class="text-red-600">
+    This field is required.
+  </div>
+  <div *ngIf="validate('username','minlength')" class="text-red-600">
+    Userame must be at least
+    {{signInForm.get('username')?.errors?.['minlength'].requiredLength}}
+    characters.
+  </div>
+  <div *ngIf="signInForm.get('username')?.touched && signInForm.get('username')?.errors?.['pattern']" class="text-re">
+    The field must not contain special characters or blank spaces.
+  </div>
+
+  <input type="password" placeholder="Password" class="input input-ghost" name="password" formControlName="password"
+    required />
+
+  <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['required']"
+    class="text-red-600">
+    This field is required.
+  </div>
+
+  <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['minlength']"
+    class="text-red-600">
+    Password must be at least
+    {{signInForm.get('password')?.errors?.['minlength'].requiredLength}}
+    characters.
+  </div>
+
+  <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['maxlength']"
+    class="text-red-600">
+    Password should not be more than
+    {{signInForm.get('password')?.errors?.['minlength'].requiredLength}}
+    characters long.
+  </div>
+
+  <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['pattern']"
+    class="text-red-600">
+    Password should have lower, upper case, numbers and special characters
+  </div>
+  <div *ngIf="signInForm.get('password')?.touched && signInForm.get('password')?.errors?.['passwordMatchValidator']"
+    class="text-red-600">
+    Password do not match
+  </div>
+  <button class="btn bg-green-500 rounded-xl hover:bg-green-400 mt-10">
+    SIGN IN
+  </button>
+
+</form>
