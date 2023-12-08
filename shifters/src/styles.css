@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* tailwind directives */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* submit button */
 .submit-btn {
     background-color: rgba(46, 204, 113, 1);
@@ -35,3 +41,8 @@ ngIf section validations
     border-radius: 5px;
     height: 35px;
 }
+
+body, html {
+    height: 95%;
+    margin: 1rem;
+  }

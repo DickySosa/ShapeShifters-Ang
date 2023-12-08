@@ -1,39 +1,40 @@
 .App {
-    text-align: center;
-    background-color: #252525;
-    padding: 1rem;
-    margin: 1rem;
-    margin-left: 15rem;
-    margin-right: 15rem;
-    border-radius: 26px;
-    min-width: 350px;
-    max-width: 450px;
-  }
-  
-  .main-title {
-    color: white;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 40;
-    font-size: 32px;
-    line-height: 39px;
-  
-  }
-  .switch-buttons{
-    margin-bottom: 2rem;
-  }
-  
-  .switch-screen {
-    color: white;
-    background-color: rgba(0, 0, 0, 0);
-    margin-right: 15px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .active-form {
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 1px solid rgba(46, 204, 113, 1)
-  }
+  text-align: center;
+  background-color: #252525;
+  padding: 1rem;
+  margin:auto auto;
+  border-radius: 26px;
+  width: 90%;
+  height: 100%;
+
+}
+
+.main-title {
+  color: white;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 40;
+  font-size: 32px;
+  line-height: 39px;
+  margin-bottom: 1rem;
+
+}
+
+.switch-buttons {
+  margin-bottom: 2rem;
+}
+
+.switch-screen {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  margin-right: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.active-form {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgba(46, 204, 113, 1)
+}
